@@ -9,6 +9,7 @@ body, html {
     line-height: 1.6;
 }
 
+/* Botones */
 .btn {
     padding: 10px 20px;
     background-color: #000000;
@@ -23,6 +24,7 @@ body, html {
     transform: scale(1.05);
 }
 
+/* Sombras y bordes redondeados */
 .hero, .about, .gallery, .form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -118,6 +120,8 @@ body, html {
     text-align: center;
     color: #ffffff;
     padding: 20px;
+    margin: 0; /* Sin margen */
+    border-radius: 0; /* Eliminamos el border-radius */
 }
 
 .hero-content h1 {
@@ -135,7 +139,7 @@ body, html {
     background-color: #000000;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Mantenemos el border-radius en el botón */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
