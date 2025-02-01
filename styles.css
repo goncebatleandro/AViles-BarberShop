@@ -1,0 +1,271 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent; /* Fondo transparente */
+    padding: 10px 20px; /* Reducimos el padding */
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.navbar.scrolled {
+    background-color: #ffffff; /* Fondo blanco al hacer scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra al hacer scroll */
+}
+
+.navbar-logo img {
+    height: 40px; /* Reducimos el tamaño del logo */
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.1); /* Efecto hover */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 15px; /* Reducimos el margen entre enlaces */
+}
+
+.navbar-links a {
+    color: #ffffff; /* Texto blanco (inicialmente) */
+    text-decoration: none;
+    font-size: 0.9rem; /* Reducimos el tamaño de la fuente */
+    font-weight: 500; /* Texto semi-negrita */
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #000000; /* Texto negro al hacer hover */
+}
+
+.navbar.scrolled .navbar-links a {
+    color: #333333; /* Texto gris oscuro al hacer scroll */
+}
+
+.navbar.scrolled .navbar-links a:hover {
+    color: #000000; /* Texto negro al hacer hover */
+}
+
+/* HERO */
+.hero {
+    background: url('/img/barberia_image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out; /* Animación */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out; /* Animación */
+}
+
+.hero-content .btn {
+    padding: 10px 20px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out; /* Animación */
+}
+
+.hero-content .btn:hover {
+    background-color: #333333; /* Fondo gris oscuro al hacer hover */
+    transform: scale(1.05); /* Efecto hover */
+}
+
+/* About Section */
+.about {
+    height: 100vh;
+    padding: 50px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Efecto hover */
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333333; /* Texto gris oscuro */
+    margin-bottom: 20px;
+}
+
+.about-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-text .btn:hover {
+    background-color: #333333; /* Fondo gris oscuro al hacer hover */
+    transform: scale(1.05); /* Efecto hover */
+}
+
+/* Gallery Section */
+.gallery {
+    height: 100vh;
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.carousel img {
+    max-width: 30%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel img:hover {
+    transform: scale(1.05); /* Efecto hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+/* Form Section */
+.form {
+    height: 100vh;
+    padding: 50px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.form h2 {
+    font-size: 2.5rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 20px;
+}
+
+.form form {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin-bottom: 5px;
+    color: #333333; /* Texto gris oscuro */
+}
+
+.form input, .form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #cccccc; /* Borde gris */
+    transition: border-color 0.3s ease;
+}
+
+.form input:focus, .form textarea:focus {
+    border-color: #000000; /* Borde negro al hacer focus */
+}
+
+.form button {
+    padding: 10px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #333333; /* Fondo gris oscuro al hacer hover */
+    transform: scale(1.05); /* Efecto hover */
+}
