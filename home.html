@@ -14,7 +14,12 @@
         <div class="navbar-logo">
             <img src="/img/logo.png" alt="Logo Barbería">
         </div>
-        <ul class="navbar-links">
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
             <li><a href="#hero">Inicio</a></li>
             <li><a href="#about">Sobre Nosotros</a></li>
             <li><a href="#gallery">Galería</a></li>
@@ -33,48 +38,98 @@
 
     <!-- Segunda Sección: Sobre Nosotros -->
     <section id="about" class="about">
-        <div class="about-container" data-aos="fade-up" data-aos-duration="1000">
-            <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-                <img src="/img/back.png" alt="Barbero">
+        <div class="about-container">
+            <!-- Foto y Texto -->
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/img/back.png" alt="Barbero">
+                </div>
+                <div class="about-text">
+                    <h2>¿Por qué elegirnos?</h2>
+                    <p>
+                        En <strong>Aviles barber</strong>, no solo te ofrecemos un corte de pelo, te ofrecemos una experiencia única. 
+                        Nuestro equipo de barberos expertos está dedicado a resaltar tu estilo personal con técnicas innovadoras 
+                        y un toque de tradición.
+                    </p>
+                    <p>
+                        Nos enorgullece crear un ambiente acogedor donde te sientas como en casa. Ya sea que busques un corte clásico, 
+                        un diseño moderno o un afeitado profesional, estamos aquí para superar tus expectativas.
+                    </p>
+                    <p>
+                        ¡Agenda tu turno hoy y descubre por qué somos la mejor opción para cuidar de tu imagen!
+                    </p>
+                    <a href="#formulario" class="btn">Reserva tu turno</a>
+                </div>
             </div>
-            <div class="about-text" data-aos="fade-left" data-aos-delay="400">
-                <h2>¿Por qué elegirnos?</h2>
-                <p>En <strong>Aviles barber</strong>, no solo te ofrecemos un corte de pelo, te ofrecemos una experiencia única.</p>
-                <a href="#formulario" class="btn">Reserva tu turno</a>
+    
+            <!-- Google Maps -->
+            <div class="about-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!4v1738432982969!6m8!1m7!1sVtknk8w6rDNS0iMobtrG9Q!2m2!1d-27.21915722707343!2d-61.19449072436104!3f75.61349364234732!4f-25.07440084231777!5f0.4000000000000002" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-            <div><iframe src="https://www.google.com/maps/embed?pb=!4v1738432982969!6m8!1m7!1sVtknk8w6rDNS0iMobtrG9Q!2m2!1d-27.21915722707343!2d-61.19449072436104!3f75.61349364234732!4f-25.07440084231777!5f0.4000000000000002" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
     </section>
 
-    <!-- Tercera Sección: Galería -->
-    <section id="gallery" class="gallery">
-        <h2>Galería</h2>
-        <div class="carousel">
+<!-- Tercera Sección: Galería -->
+<section id="gallery" class="gallery">
+    <h2>Nuestros Trabajos</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
             <img src="/img/cort1.png" alt="Corte 1">
-            <img src="/img/cort2.jpg" alt="Corte 2">
-            <img src="/img/cort3.jpg" alt="Corte 3"> <!-- Cambia a una imagen diferente -->
         </div>
-    </section>
+        <div class="gallery-item">
+            <img src="/img/cort2.jpg" alt="Corte 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort3.jpg" alt="Corte 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort4.jpg" alt="Corte 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort4.jpg" alt="Corte 5">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort2.jpg" alt="Corte 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort2.jpg" alt="Corte 6">
+        </div>
+        <div class="gallery-item">
+            <img src="/img/cort2.jpg" alt="Corte 6">
+        </div>
+    </div>
+</section>
 
-    <!-- Cuarta Sección: Formulario de Turnos -->
-    <section id="formulario" class="form">
-        <h2>Reserva tu turno</h2>
-        <form id="reservaForm" action="/enviar-correo" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+   <!-- Cuarta Sección: Formulario de Turnos -->
+<section id="formulario" class="form">
+    <h2>Reserva tu turno</h2>
+    <form id="reservaForm" action="/enviar-correo" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
 
     <script src="/java.js"></script>
     <script>
