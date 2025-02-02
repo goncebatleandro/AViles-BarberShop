@@ -5,7 +5,7 @@ document.getElementById('reservaForm').addEventListener('submit', function (even
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
-    fetch('/enviar-correo', {
+    fetch('http://localhost:3000/enviar-correo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,6 +25,14 @@ document.getElementById('reservaForm').addEventListener('submit', function (even
     })
     .catch(error => {
         console.error('Error:', error);
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.textContent = 'Hubo un error al enviar la reserva. Inténtalo de nuevo.';
+        document.querySelector('.form').appendChild(errorMessage);
+
+        setTimeout(() => {
+            errorMessage.remove();
+        }, 3000);
     });
 });
 
