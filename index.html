@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviles barbershop</title>
+    <title>Aviles Barbershop</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./img/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-logo">
             <img src="./img/logo.png" alt="Logo Barbería">
@@ -27,16 +29,16 @@
         </ul>
     </nav>
 
-    <!-- Primera Sección: Hero -->
+    <!-- Hero Section -->
     <section id="hero" class="hero" data-aos="fade-in">
         <div class="hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="200">Bienvenido a Aviles barbershop</h1>
+            <h1 data-aos="fade-up" data-aos-delay="200">Bienvenido a Aviles Barbershop</h1>
             <p data-aos="fade-up" data-aos-delay="400">Tu estilo, nuestra pasión.</p>
             <a href="#formulario" class="btn" data-aos="fade-up" data-aos-delay="600">Reserva tu turno</a>
         </div>
     </section>
 
-    <!-- Segunda Sección: Sobre Nosotros -->
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-content" data-aos="fade-right">
@@ -45,7 +47,7 @@
                 </div>
                 <div class="about-text">
                     <h2>¿Por qué elegirnos?</h2>
-                    <p>En <strong>Aviles barber</strong>, no solo te ofrecemos un corte de pelo, te ofrecemos una experiencia única.</p>
+                    <p>En <strong>Aviles Barber</strong>, no solo te ofrecemos un corte de pelo, te ofrecemos una experiencia única.</p>
                     <a href="#formulario" class="btn">Reserva tu turno</a>
                 </div>
             </div>
@@ -55,41 +57,109 @@
         </div>
     </section>
 
-<!-- Tercera Sección: Galería -->
-<section id="gallery" class="gallery">
-    <h2 data-aos="fade-up">Nuestros Trabajos</h2>
-    <div class="gallery-grid" data-aos="zoom-in">
-     <img src="./img/cort2.jpg" alt="Corte 1">
-     <img src="./img/cort2.jpg" alt="Corte 1">
-     <img src="./img/cort3.jpg" alt="Corte 1">
-     <img src="./img/cort4.jpg" alt="Corte 1">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 data-aos="fade-up">Nuestros Trabajos</h2>
+        <div class="gallery-grid" data-aos="zoom-in">
+            <img src="./img/cort2.jpg" alt="Corte 1">
+            <img src="./img/cort2.jpg" alt="Corte 2">
+            <img src="./img/cort3.jpg" alt="Corte 3">
+            <img src="./img/cort4.jpg" alt="Corte 4">
+        </div>
+    </section>
 
+    <!-- Form Section -->
+    <section id="formulario" class="form">
+        <div class="form-container">
+            <div class="form-intro" data-aos="fade-right">
+                <h2>Reserva tu turno</h2>
+                <p>En <strong>Aviles Barbershop</strong>, queremos ofrecerte la mejor experiencia. Reserva tu turno ahora y asegura tu lugar para un corte de pelo, afeitado o tratamiento especial.</p>
+                <p>¿Tienes alguna pregunta? No dudes en contactarnos.</p>
+                <ul class="form-contact-info">
+                    <li><i class="fas fa-phone"></i> +54 123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> info@avilesbarbershop.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</li>
+                </ul>
+            </div>
+            <form id="reservaForm" action="/enviar-correo" method="POST" data-aos="fade-left">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="corte">Corte de pelo</option>
+                        <option value="afeitado">Afeitado clásico</option>
+                        <option value="tratamiento">Tratamiento de barba</option>
+                        <option value="completo">Corte + Tratamiento</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Algo más que debamos saber?"></textarea>
+                </div>
+                <button type="submit">Reservar ahora</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Logo y descripción -->
+        <div class="footer-info">
+            <img src="./img/logo.png" alt="Logo Aviles Barbershop" class="footer-logo">
+            <p>Aviles Barbershop - Tu estilo, nuestra pasión.</p>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="footer-social">
+            <h3>Síguenos</h3>
+            <ul class="social-links">
+                <li><a href="https://instagram.com/tuinstagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://twitter.com/tutwitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://wa.me/tunumerodewhatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                <li><a href="https://facebook.com/tufacebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-contact">
+            <h3>Contacto</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</li>
+                <li><i class="fas fa-phone"></i> Teléfono: +54 123 456 789</li>
+                <li><i class="fas fa-envelope"></i> Email: info@avilesbarbershop.com</li>
+            </ul>
+        </div>
     </div>
-</section>
 
-   <!-- Cuarta Sección: Formulario de Turnos -->
-   <section id="formulario" class="form">
-    <h2 data-aos="fade-up">Reserva tu turno</h2>
-    <form id="reservaForm" action="/enviar-correo" method="POST" data-aos="fade-up">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required>
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora" required>
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-</section>
+    <!-- Derechos de autor -->
+    <div class="footer-bottom">
+        <p>&copy; 2023 Aviles Barbershop. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
-<script src="./java.js"></script>
-<script>
+    <!-- Scripts -->
+    <script src="./java.js"></script>
+    <script>
         AOS.init({
-            duration: 1000, // Duración de las animaciones
-            once: true, // Las animaciones solo se ejecutan una vez
+            duration: 1000,
+            once: true,
         });
     </script>
 </body>
