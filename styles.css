@@ -153,7 +153,7 @@ body.light-mode .footer ul li a:hover {
 }
 
 .navbar-links a:hover {
-    color: #ffd700; /* Dorado al hacer hover */
+    color: rgb(225, 191, 0); /* Dorado al hacer hover */
 }
 
 .navbar.scrolled .navbar-links a {
