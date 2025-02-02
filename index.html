@@ -71,17 +71,8 @@
     <!-- Form Section -->
     <section id="formulario" class="form">
         <div class="form-container">
-            <div class="form-intro" data-aos="fade-right">
+            <form id="reservaForm" action="/enviar-correo" method="POST" data-aos="fade-right">
                 <h2>Reserva tu turno</h2>
-                <p>En <strong>Aviles Barbershop</strong>, queremos ofrecerte la mejor experiencia. Reserva tu turno ahora y asegura tu lugar para un corte de pelo, afeitado o tratamiento especial.</p>
-                <p>¿Tienes alguna pregunta? No dudes en contactarnos.</p>
-                <ul class="form-contact-info">
-                    <li><i class="fas fa-phone"></i> +54 123 456 789</li>
-                    <li><i class="fas fa-envelope"></i> info@avilesbarbershop.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</li>
-                </ul>
-            </div>
-            <form id="reservaForm" action="/enviar-correo" method="POST" data-aos="fade-left">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -114,45 +105,33 @@
                 </div>
                 <button type="submit">Reservar ahora</button>
             </form>
+            <div class="form-map" data-aos="fade-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1738432982969!6m8!1m7!1sVtknk8w6rDNS0iMobtrG9Q!2m2!1d-27.21915722707343!2d-61.19449072436104!3f75.61349364234732!4f-25.07440084231777!5f0.4000000000000002" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <!-- Logo y descripción -->
-        <div class="footer-info">
-            <img src="./img/logo.png" alt="Logo Aviles Barbershop" class="footer-logo">
-            <p>Aviles Barbershop - Tu estilo, nuestra pasión.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="./img/logo.png" alt="Logo Aviles Barbershop" class="footer-logo">
+                <p>Aviles Barbershop - Tu estilo, nuestra pasión.</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <ul class="social-links">
+                    <li><a href="https://instagram.com/tuinstagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://twitter.com/tutwitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://wa.me/tunumerodewhatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://facebook.com/tufacebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Redes Sociales -->
-        <div class="footer-social">
-            <h3>Síguenos</h3>
-            <ul class="social-links">
-                <li><a href="https://instagram.com/tuinstagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a href="https://twitter.com/tutwitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a></li>
-                <li><a href="https://wa.me/tunumerodewhatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                <li><a href="https://facebook.com/tufacebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Aviles Barbershop. Todos los derechos reservados.</p>
         </div>
-
-        <!-- Contacto -->
-        <div class="footer-contact">
-            <h3>Contacto</h3>
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</li>
-                <li><i class="fas fa-phone"></i> Teléfono: +54 123 456 789</li>
-                <li><i class="fas fa-envelope"></i> Email: info@avilesbarbershop.com</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Derechos de autor -->
-    <div class="footer-bottom">
-        <p>&copy; 2023 Aviles Barbershop. Todos los derechos reservados.</p>
-    </div>
-</footer>
+    </footer>
 
     <!-- Scripts -->
     <script src="./java.js"></script>
