@@ -27,6 +27,10 @@
             <li><a href="#gallery">Galería</a></li>
             <li><a href="#formulario">Reserva</a></li>
         </ul>
+        <!-- Botón de cambio de tema -->
+        <div class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-cut"></i> <!-- Ícono de maquinita de cortar el pelo -->
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -59,11 +63,34 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2 data-aos="fade-up">Nuestros Trabajos</h2>
-        <div class="gallery-grid" data-aos="zoom-in">
-            <img src="./img/cort2.jpg" alt="Corte 1">
-            <img src="./img/cort2.jpg" alt="Corte 2">
-            <img src="./img/cort3.jpg" alt="Corte 3">
-            <img src="./img/cort4.jpg" alt="Corte 4">
+        <div class="carousel-container" data-aos="zoom-in">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="./img/Tecor1.jpg" alt="Corte 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./img/Tecor2.jpg" alt="Corte 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./img/Tecor3.jpg" alt="Corte 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./img/Tecor4.jpg" alt="Corte 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./img/Tecor5.jpg" alt="Corte 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./img/Tecor6.jpg" alt="Corte 6">
+                </div>
+            </div>
+            <button class="carousel-button prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-button next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-dots"></div>
         </div>
     </section>
 
