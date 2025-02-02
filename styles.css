@@ -83,6 +83,50 @@ body, html {
     color: #ffd700; /* Dorado al hacer hover */
 }
 
+/* Menú Hamburguesa */
+.navbar-toggle {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que esté por encima del menú */
+}
+
+.navbar-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #ffffff; /* Color de las barras */
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.navbar.scrolled .navbar-toggle .bar {
+    background-color: #333333; /* Color de las barras al hacer scroll */
+}
+
+/* Navbar Links (Mobile) */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #ffd700; /* Dorado al hacer hover */
+}
+
 /* Hero Section */
 .hero {
     background: url('img/barberia_image.jpg') no-repeat center center/cover;
@@ -274,10 +318,9 @@ form button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+.h2form {
+    font-size: 2rem;
+    color: #ffd700; /* Dorado */
 }
 
 /* Footer */
@@ -372,19 +415,29 @@ form button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .navbar {
+        background-color: #1a1a1a; /* Fondo oscuro al hacer scroll */
+    }
+
+    .navbar-toggle {
+        display: flex; /* Mostrar el menú hamburguesa en móviles */
+    }
+
     .navbar-links {
-        display: none;
+        display: none; /* Ocultar el menú por defecto en móviles */
         flex-direction: column;
         width: 100%;
-        background-color: #ffffff;
+        background-color: #1a1a1a; /* Fondo oscuro */
         position: absolute;
-        top: 60px;
+        top: 60px; /* Distancia desde la parte superior */
         left: 0;
         padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-links.active {
-        display: flex;
+        display: flex; /* Mostrar el menú cuando está activo */
     }
 
     .navbar-links li {
@@ -393,12 +446,14 @@ form button:hover {
     }
 
     .navbar-links a {
-        color: #333333;
+        color: #ffffff; /* Texto blanco */
     }
 
-    .navbar-toggle {
-        display: flex;
+    .navbar-links a:hover {
+        color: #ffd700; /* Dorado al hacer hover */
     }
+
+    /* HERO */
 
     .hero-content h1 {
         font-size: 2rem;
@@ -408,13 +463,20 @@ form button:hover {
         font-size: 1rem;
     }
 
+    /* SOBRE NOSOTROS */
+
     .about-container {
         flex-direction: column;
     }
 
+    /* GALERIA */
+
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
+
+    /* TURNOS */
+
     .form-container {
         flex-direction: column;
     }
