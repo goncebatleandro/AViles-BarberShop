@@ -1,4 +1,4 @@
-// Función para manejar el envío del formulario
+// Función para enviar email
 document.getElementById('reservaForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
