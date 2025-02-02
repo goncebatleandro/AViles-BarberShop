@@ -85,7 +85,7 @@ body, html {
 
 /* Hero Section */
 .hero {
-    background: url('/img/barberia_image.jpg') no-repeat center center/cover;
+    background: url('img/barberia_image.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
