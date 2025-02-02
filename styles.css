@@ -344,6 +344,32 @@ form button:hover {
     color: #cccccc; /* Texto gris claro */
 }
 
+/* Botón flotante de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la izquierda */
+    background-color: #25d366; /* Color de WhatsApp */
+    color: #ffffff; /* Color del ícono */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Color de WhatsApp al hacer hover */
+    transform: scale(1.1); /* Efecto de escala al hacer hover */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-links {
