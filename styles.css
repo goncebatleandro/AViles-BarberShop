@@ -264,6 +264,7 @@ body.light-mode .footer ul li a:hover {
 
 .about-image img {
     width: 100%;
+    height: 360px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
