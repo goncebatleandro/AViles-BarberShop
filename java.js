@@ -39,10 +39,17 @@ document.getElementById('reservaForm').addEventListener('submit', function (even
 // Función para el scroll suave
 document.querySelectorAll('.navbar-links a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        e.preventDefault(); // Previene el comportamiento por defecto del enlace
+        const targetId = this.getAttribute('href').substring(1); // Obtiene el ID de la sección
+        const targetElement = document.getElementById(targetId); // Encuentra el elemento de la sección
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+        }
+        // Cierra el menú hamburguesa después de hacer clic (si es necesario)
+        const navbarLinks = document.getElementById('navbar-links');
+        if (navbarLinks.classList.contains('active')) {
+            navbarLinks.classList.remove('active');
+        }
     });
 });
 
@@ -60,6 +67,21 @@ window.addEventListener('scroll', function () {
 document.getElementById('mobile-menu').addEventListener('click', function () {
     const navbarLinks = document.getElementById('navbar-links');
     navbarLinks.classList.toggle('active');
+});
+
+// Función cierre menú hamburguesa
+document.querySelectorAll('.navbar-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Cierra el menú hamburguesa después de hacer clic
+        const navbarLinks = document.getElementById('navbar-links');
+        navbarLinks.classList.remove('active');
+    });
 });
 
 // Función para cambiar el tema
