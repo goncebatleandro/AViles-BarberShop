@@ -1,18 +1,4 @@
 // Pantalla de carga
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loading-screen');
-
-    // Simula un tiempo de carga de 3 segundos
-    setTimeout(function() {
-        // Aplica el efecto de desvanecimiento
-        loadingScreen.style.animation = 'fadeOut 1s ease-in-out forwards';
-
-        // Oculta la pantalla de carga después del desvanecimiento
-        setTimeout(function() {
-            loadingScreen.style.display = 'none';
-        }, 1000); // 1 segundo para el desvanecimiento
-    }, 3000); // 3 segundos de carga
-});
 
 // Enviar Email
 document.getElementById('reservaForm').addEventListener('submit', function (event) {
