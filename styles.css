@@ -803,6 +803,10 @@ body.light-mode .navbar-links a:hover {
         flex-direction: column;
     }
 
+    .about-image img {
+        height: 200px;
+    }
+
     /* GALERIA */
 
     .gallery-grid {
