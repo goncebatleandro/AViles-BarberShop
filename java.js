@@ -1,9 +1,27 @@
-// Función para enviar email
+// Pantalla de carga
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+
+    // Simula un tiempo de carga de 3 segundos
+    setTimeout(function() {
+        // Aplica el efecto de desvanecimiento
+        loadingScreen.style.animation = 'fadeOut 1s ease-in-out forwards';
+
+        // Oculta la pantalla de carga después del desvanecimiento
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 1000); // 1 segundo para el desvanecimiento
+    }, 3000); // 3 segundos de carga
+});
+
+// Enviar Email
 document.getElementById('reservaForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
+
+    console.log("Datos del formulario:", data);
 
     fetch('http://localhost:3000/enviar-correo', {
         method: 'POST',
@@ -12,8 +30,12 @@ document.getElementById('reservaForm').addEventListener('submit', function (even
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log("Respuesta del servidor:", response);
+        return response.json();
+    })
     .then(result => {
+        console.log("Resultado:", result);
         const confirmation = document.createElement('div');
         confirmation.className = 'confirmation-message';
         confirmation.textContent = '¡Gracias! Tu reserva ha sido enviada.';
@@ -166,4 +188,102 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => {
         moveToSlide(currentSlide + 1);
     }, 5000);
+});
+
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reservaForm');
+    const overlay = document.getElementById('overlay');
+    const closeOverlay = document.getElementById('close-overlay');
+
+    // Función para mostrar el overlay
+    function showOverlay(message) {
+        const overlayMessage = document.getElementById('overlay-message');
+        overlayMessage.textContent = message;
+        overlay.style.display = 'flex';
+    }
+
+    // Función para cerrar el overlay
+    function closeOverlayFunc() {
+        overlay.style.display = 'none';
+    }
+
+    // Evento para cerrar el overlay con el botón
+    closeOverlay.addEventListener('click', closeOverlayFunc);
+
+    // Validación del formulario
+    function validateForm() {
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const celular = document.getElementById('celular').value;
+        const dni = document.getElementById('dni').value;
+        const fecha = document.getElementById('fecha').value;
+        const hora = document.getElementById('hora').value;
+        const servicio = document.getElementById('servicio').value;
+
+        // Validar campos vacíos
+        if (!nombre || !email || !celular || !dni || !fecha || !hora || !servicio) {
+            showOverlay('Por favor, complete todos los campos obligatorios');
+            return false;
+        }
+
+        // Validar formato de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showOverlay('Por favor, ingrese un email válido');
+            return false;
+        }
+
+        // Validar celular (10 dígitos)
+        const celularRegex = /^[0-9]{10}$/;
+        if (!celularRegex.test(celular)) {
+            showOverlay('El número de celular debe tener 10 dígitos');
+            return false;
+        }
+
+        // Validar DNI (7-8 dígitos)
+        const dniRegex = /^[0-9]{7,8}$/;
+        if (!dniRegex.test(dni)) {
+            showOverlay('El DNI debe tener entre 7 y 8 dígitos');
+            return false;
+        }
+
+        return true;
+    }
+
+    // Manejar el envío del formulario
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (validateForm()) {
+            // Aquí puedes usar fetch para enviar los datos
+            fetch('http://localhost:3000/enviar-correo', {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(data => {
+                showOverlay('¡Reserva enviada con éxito!');
+                form.reset(); // Limpiar el formulario
+            })
+            .catch(error => {
+                showOverlay('Error al enviar la reserva. Por favor, intente nuevamente.');
+                console.error('Error:', error);
+            });
+        }
+    });
+
+    // Cerrar overlay al hacer clic fuera del contenido
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            closeOverlayFunc();
+        }
+    });
+
+    // Cerrar overlay con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeOverlayFunc();
+        }
+    });
 });

@@ -9,12 +9,25 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hanunoo&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+Hentaigana:wght@200..900&family=Smooch+Sans:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
+<!-- Pantalla de carga -->
+<div class="loadscreen">
+<div id="loading-screen">
+    <h1>Avilés Barber-Shop</h1>
+    <div class="barber-pole">
+        <div class="barber-pole-loading"></div>
+    </div>
+</div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
         <div class="navbar-logo">
-            <img src="./img/logo.png" alt="Logo Barbería">
+            <a href="#hero"><img src="./img/logo.png" alt="Logo Barbería"></a>
         </div>
         <div class="navbar-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -31,9 +44,9 @@
         <div class="theme-toggle" id="theme-toggle">
             <i class="fas fa-cut"></i> <!-- Ícono de maquinita de cortar el pelo -->
         </div>
-    </nav>
+</nav>
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section id="hero" class="hero" data-aos="fade-in">
         <div class="hero-content">
             <h1 data-aos="fade-up" data-aos-delay="200">Bienvenido a Áviles Barbershop</h1>
@@ -43,7 +56,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+<!-- About Section -->
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-content" data-aos="fade-right">
@@ -96,61 +109,76 @@
     </section>
 
 
-    
-    <!-- Form Section -->
-    <section id="formulario" class="form">
-        <div class="form-container">
-            <form id="reservaForm" action="http://localhost:3000/enviar-correo" method="POST" data-aos="fade-right">
-                <h2>Reserva tu turno</h2>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
-                <div class="form-group">
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="hora" name="hora" required>
-                </div>
-                <div class="form-group">
-                    <label for="servicio">Servicio:</label>
-                    <select id="servicio" name="servicio" required>
-                        <option value="">Selecciona un servicio</option>
-                        <option value="corte">Corte de pelo</option>
-                        <option value="afeitado">Afeitado clásico</option>
-                        <option value="tratamiento">Tratamiento de barba</option>
-                        <option value="completo">Corte + Tratamiento</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Algo más que debamos saber?"></textarea>
-                </div>
-                <button type="submit">Reservar ahora</button>
-            </form>
-            <div class="form-map" data-aos="fade-left">
-                <h2 class="h2form">Horarios de atención al cliente</h2>
-                    <p>En <strong>Aviles Barber</strong> te esperemos con las puertas abiertas desde las 13:00 hasta las 22:30</p>
-                <h2 class="h2form">¿Cualés son los días laborales?</h2>
-                    <p>Trabajamos de Lunes a Sábado</p>
-                <h2 class="h2form">¿Qué metodos de pagos aceptamos?</h2>
-                    <p>Aceptamos desde efectivo, hasta cualquier tarjeta de crédito o débito</p>
-                <h2 class="h2form">Para más información consultar a mi <a class="h2form" href="https://api.whatsapp.com/send/?phone=543731448923&text&type=phone_number&app_absent=0" target="_blank">whatsapp</a></h2>
+ <!-- Form Section -->
+<section id="formulario" class="form">
+    <div class="form-container">
+        <form id="reservaForm" action="http://localhost:3000/enviar-correo" method="POST">
+            <h2>Reserva tu turno</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
             </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" required>
+            </div>
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+            <div class="form-group">
+                <label for="servicio">Servicio:</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Selecciona un servicio</option>
+                    <option value="corte">Corte de pelo</option>
+                    <option value="afeitado">Afeitado clásico</option>
+                    <option value="tratamiento">Tratamiento de barba</option>
+                    <option value="completo">Corte + Tratamiento</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Algo más que debamos saber?"></textarea>
+            </div>
+            <button type="submit">Reservar ahora</button>
+        </form>
+        <div class="form-map" data-aos="fade-left">
+            <h2 class="h2form">Horarios de atención al cliente</h2>
+            <p>En <strong>Aviles Barber</strong> te esperemos con las puertas abiertas desde las 13:00 hasta las 22:30</p>
+            <h2 class="h2form">¿Cualés son los días laborales?</h2>
+            <p>Trabajamos de Lunes a Sábado</p>
+            <h2 class="h2form">¿Qué metodos de pagos aceptamos?</h2>
+            <p>Aceptamos desde efectivo, hasta cualquier tarjeta de crédito o débito</p>
+            <h2 class="h2form">Para más información consultar a mi <a class="h2form" href="https://api.whatsapp.com/send/?phone=543731448923&text&type=phone_number&app_absent=0" target="_blank">whatsapp</a></h2>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
+<!-- Overlay para mensajes -->
+<div id="overlay" class="overlay">
+    <div class="overlay-content">
+        <p id="overlay-message"></p>
+        <button id="close-overlay">Cerrar</button>
+    </div>
+</div>
+
+<!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <img src="./img/logo.png" alt="Logo Aviles Barbershop" class="footer-logo">
+                <a href="#hero"><img src="./img/logo.png" alt="Logo Aviles Barbershop" class="footer-logo"></a>
                 <p>Aviles Barbershop - Tu estilo, nuestra pasión.</p>
             </div>
             <div class="footer-social">
