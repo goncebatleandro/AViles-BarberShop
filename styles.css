@@ -185,21 +185,21 @@ body.light-mode .whatsapp-button:hover {
 /* Botones */
 .btn {
     padding: 10px 20px;
-    background-color: #998f55; /* Dorado */
-    color: #1a1a1a; /* Texto oscuro */
+    background: linear-gradient(to right, #FF0000, #FFFFFF, #0057B8);
+    color: #000000; /* Texto oscuro */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #e6b800; /* Dorado más oscuro */
+    background-color: #e6b800; 
     transform: scale(1.05);
 }
 
 .btnwsp {
     padding: 10px 20px;
-    background-color: #5d805d; /* Dorado */
+    background: linear-gradient(to right, #FF0000, #FFFFFF, #0057B8);
     color: #000000; /* Texto oscuro */
     text-decoration: none;
     border-radius: 5px;
@@ -207,7 +207,7 @@ body.light-mode .whatsapp-button:hover {
 }
 
 .btnwsp:hover {
-    background-color: #00ff1e; /* Dorado más oscuro */
+    background-color: #00ff1e;
     transform: scale(1.1) rotate(5deg); /* Aumenta el tamaño y rota ligeramente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
 }
@@ -330,15 +330,23 @@ body.light-mode .whatsapp-button:hover {
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
-    color: #000;
+    background: linear-gradient(to right, #FF0000, #FFFFFF, #0057B8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
-    color: #000;
+    background: linear-gradient(to right, #FF0000, #FFFFFF, #0057B8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* About Section */
