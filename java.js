@@ -106,8 +106,7 @@ document.getElementById('theme-toggle').addEventListener('click', function () {
     }
 });
 
-// GALERIA
-// Carousel functionality
+// Carrousell
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
@@ -115,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.carousel-button.prev');
     const dotsContainer = document.querySelector('.carousel-dots');
 
-    // Create dots
+    // Crear puntos de navegación (dots)
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -125,10 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const dots = Array.from(dotsContainer.children);
 
-    // Set slide width
+    // Calcular el ancho de cada diapositiva
     const slideWidth = slides[0].getBoundingClientRect().width;
-    
-    // Arrange slides next to each other
+
+    // Posicionar las diapositivas una al lado de la otra
     const setSlidePosition = (slide, index) => {
         slide.style.left = slideWidth * index + 'px';
     };
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentSlide = 0;
 
-    // Move to slide
+    // Función para mover el carrusel a una diapositiva específica
     const moveToSlide = (targetIndex) => {
         if (targetIndex < 0) {
             targetIndex = slides.length - 1;
@@ -144,36 +143,37 @@ document.addEventListener('DOMContentLoaded', function() {
             targetIndex = 0;
         }
 
+        // Aplicar la transformación al carrusel
         track.style.transform = `translateX(-${targetIndex * slideWidth}px)`;
-        
-        // Update active dot
+
+        // Actualizar el punto activo
         dots[currentSlide].classList.remove('active');
         dots[targetIndex].classList.add('active');
-        
+
         currentSlide = targetIndex;
     };
 
-    // Next button click
+    // Botón "Siguiente"
     nextButton.addEventListener('click', () => {
         moveToSlide(currentSlide + 1);
     });
 
-    // Previous button click
+    // Botón "Anterior"
     prevButton.addEventListener('click', () => {
         moveToSlide(currentSlide - 1);
     });
 
-    // Dot click
+    // Navegación por puntos (dots)
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             moveToSlide(index);
         });
     });
 
-    // Auto-play
+    // Auto-play (opcional)
     setInterval(() => {
         moveToSlide(currentSlide + 1);
-    }, 5000);
+    }, 5000); // Cambia de diapositiva cada 5 segundos
 });
 
 // Esperar a que el DOM esté completamente cargado
