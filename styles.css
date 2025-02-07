@@ -419,7 +419,6 @@ body.light-mode .whatsapp-button:hover {
     max-width: 800px; /* Ancho máximo del carrusel */
     width: 100%; /* Asegura que ocupe el 100% del contenedor padre */
     margin: 0 auto;
-    overflow: hidden;
 }
 
 /* Carousel Track */
