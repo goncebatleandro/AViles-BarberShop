@@ -217,7 +217,7 @@ body.light-mode .whatsapp-button:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.7); /* Color negro con 70% de opacidad */
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -252,7 +252,7 @@ body.light-mode .whatsapp-button:hover {
 }
 
 .navbar-links a {
-    color: #000000; /* Texto blanco */
+    color: #ffffff; /* Texto blanco */
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
