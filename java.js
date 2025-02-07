@@ -124,15 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const dots = Array.from(dotsContainer.children);
 
-    // Calcular el ancho de cada diapositiva
-    const slideWidth = slides[0].getBoundingClientRect().width;
-
-    // Posicionar las diapositivas una al lado de la otra
-    const setSlidePosition = (slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
-    };
-    slides.forEach(setSlidePosition);
-
     let currentSlide = 0;
 
     // Función para mover el carrusel a una diapositiva específica
@@ -143,8 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
             targetIndex = 0;
         }
 
-        // Aplicar la transformación al carrusel
-        track.style.transform = `translateX(-${targetIndex * slideWidth}px)`;
+        // Cambiar a transform: translateX para un desplazamiento suave
+        track.style.transform = `translateX(-${targetIndex * 100}%)`;
 
         // Actualizar el punto activo
         dots[currentSlide].classList.remove('active');

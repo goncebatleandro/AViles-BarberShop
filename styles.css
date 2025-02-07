@@ -416,20 +416,19 @@ body.light-mode .whatsapp-button:hover {
 
 .carousel-container {
     position: relative;
-    max-width: 800px; /* Ancho máximo del carrusel */
-    width: 100%; /* Asegura que ocupe el 100% del contenedor padre */
+    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-/* Carousel Track */
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
 }
 
-/* Carousel Slides */
 .carousel-slide {
-    flex: 0 0 100%; /* Cada diapositiva ocupa el 100% del contenedor */
+    flex: 0 0 100%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -437,15 +436,15 @@ body.light-mode .whatsapp-button:hover {
 }
 
 .carousel-slide img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la diapositiva */
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-height: 500px; /* Altura máxima de la imagen */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Carousel Navigation Buttons */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -476,7 +475,6 @@ body.light-mode .whatsapp-button:hover {
     right: 10px;
 }
 
-/* Carousel Dots */
 .carousel-dots {
     display: flex;
     justify-content: center;
