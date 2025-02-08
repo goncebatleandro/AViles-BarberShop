@@ -102,6 +102,20 @@ body.light-mode .about-text p {
     color: #1a1a1a; /* Texto oscuro */
 }
 
+/*Local en modo claro */
+body.light-mode .nosotros-section {
+    background-color: #f9f9f9; /* Fondo claro para la sección "Sobre Nosotros" */
+    color: #1a1a1a; /* Texto oscuro */
+}
+
+body.light-mode .container h2 {
+    color: #1a1a1a; /* Texto oscuro */
+}
+
+body.light-mode .nosotros-text p {
+    color: #1a1a1a; /* Texto oscuro */
+}
+
 /* Gallery Section en modo claro */
 body.light-mode .gallery {
     background-color: #ffffff; /* Fondo claro para la galería */
@@ -119,6 +133,20 @@ body.light-mode .carousel-button {
 
 body.light-mode .carousel-button:hover {
     background-color: rgba(255, 215, 0, 1); /* Color dorado al hacer hover */
+}
+
+/* About Local en modo claro */
+body.light-mode .barberos-section {
+    background-color: #f9f9f9; /* Fondo claro para la sección "Sobre Nosotros" */
+    color: #1a1a1a; /* Texto oscuro */
+}
+
+body.light-mode .container h2 {
+    color: #1a1a1a; /* Texto oscuro */
+}
+
+body.light-mode .nosotros-text p {
+    color: #1a1a1a; /* Texto oscuro */
 }
 
 /* Form Section en modo claro */
