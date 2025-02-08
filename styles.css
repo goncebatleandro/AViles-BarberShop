@@ -701,6 +701,74 @@ form button:hover {
     margin-right: 10px;
 }
 
+/* Nosotros Section */
+.nosotros-section {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.nosotros-section h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 40px;
+}
+
+.nosotros-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nosotros-video {
+    width: 100%;
+    max-width: 800px;
+}
+
+.custom-video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #000; /* Fondo para el reproductor */
+}
+
+/* Personalización del reproductor de video */
+.custom-video::-webkit-media-controls-panel {
+    border-radius: 0 0 10px 10px;
+}
+
+.custom-video::-webkit-media-controls-play-button,
+.custom-video::-webkit-media-controls-mute-button {
+    color: #1a1a1a; /* Color de los botones */
+}
+
+.custom-video::-webkit-media-controls-current-time-display,
+.custom-video::-webkit-media-controls-time-remaining-display {
+    color: #1a1a1a; /* Color del texto del tiempo */
+}
+
+.nosotros-text {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.nosotros-text h3 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.nosotros-text p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 /* Footer */
 .footer {
     background-color: #1a1a1a; /* Fondo oscuro */
