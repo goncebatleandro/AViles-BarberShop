@@ -753,7 +753,7 @@ form button:hover {
 
 .nosotros-video {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px; /* Tamaño más pequeño para el video */
 }
 
 .custom-video {
@@ -780,10 +780,9 @@ form button:hover {
 
 .nosotros-text {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px; /* Mismo ancho que el video */
     text-align: center;
 }
-
 .nosotros-text h3 {
     font-size: 2rem;
     color: #ffd700;
